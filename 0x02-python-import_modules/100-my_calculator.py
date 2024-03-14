@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-import  calculator_1 as calc
+import calculator_1 as calc
 
 if __name__ == "__main__":
 
