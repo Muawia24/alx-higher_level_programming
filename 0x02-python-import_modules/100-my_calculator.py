@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 import sys
+import  calculator_1 as calc
 
-if __name__ == "__main__"
+if __name__ == "__main__":
+
     args = len(sys.argv) - 1
 
     if args != 3:
@@ -15,6 +17,13 @@ if __name__ == "__main__"
     if op not in operator:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
-
-    print("{} {} {} = {}".format(a, op, b, a + b))
+    if op == "+":
+        cal = calc.add(a, b)
+    elif op == "-":
+        cal = calc.sub(a, b)
+    elif op == "*":
+        cal = calc.mul(a, b)
+    elif op == "/":
+        cal = calc.div(a, b)
+    print("{} {} {} = {}".format(a, op, b, cal))
     sys.exit(0)
