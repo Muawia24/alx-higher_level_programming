@@ -6,4 +6,4 @@ def no_c(my_string):
         if char not in "Cc":
             new_str = new_str + char
     my_string = new_str
-    return my_string
+    return new_str
