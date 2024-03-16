@@ -5,5 +5,5 @@ def no_c(my_string):
     for char in my_string:
         if char not in "Cc":
             new_str = new_str + char
-
-    return new_str
+    my_string = new_str
+    return my_string
