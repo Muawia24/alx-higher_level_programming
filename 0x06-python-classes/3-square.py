@@ -1,21 +1,20 @@
 #!/usr/bin/python3
-
 '''Square class definition'''
 
 
 class Square:
-    '''     properties of square
+    '''     properties of square.
 
             attributes:
-                size: size of square
+                size: size of square.
     '''
 
     def __init__(self, size):
         '''
-        instansiate an instance of square
+        instansiate an instance of square.
 
         Args:
-            size: size of square
+            size: size of square.
         '''
         if type(size) == int:
             self.__size = size
@@ -28,8 +27,8 @@ class Square:
 
     def area(self):
         '''
-         public method to calc area of square
+        Public method to calc area of square.
 
-          Return: the area of a square
+        Return: the area of a square.
         '''
-        return self.__size * self.__size
+        return self.__size ** 2
