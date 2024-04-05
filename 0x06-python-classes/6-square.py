@@ -79,7 +79,7 @@ class Square:
 
           Return: the area of a square
         '''
-        return self.__size * self.__sizei
+        return self.__size * self.__size
 
     def my_print(self):
 
