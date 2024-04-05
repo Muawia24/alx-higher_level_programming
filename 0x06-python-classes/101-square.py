@@ -75,7 +75,7 @@ class Square:
         string = ""
 
         if not self.__size:
-            return sring
+            return string
 
         for n in range(self.__position[1]):
             string += "\n"
