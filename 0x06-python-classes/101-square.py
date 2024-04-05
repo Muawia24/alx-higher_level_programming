@@ -85,7 +85,7 @@ class Square:
             for j in range(self.__size):
                 string += "#"
             string += "\n"
-        return string
+        return string[:-1]
 
     def area(self):
         '''
