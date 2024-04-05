@@ -38,13 +38,12 @@ class Square:
             TypeError: size must be an integer
             ValueError: size must be >= 0
         """
-        if type(value) == int:
-            self.__size = value
-        else:
+        if type(value) != int:
             raise TypeError("size must be an integer")
 
         if value < 0:
             raise ValueError("size must be >= 0")
+        self.__size = value
 
     @property
     def position(self):
