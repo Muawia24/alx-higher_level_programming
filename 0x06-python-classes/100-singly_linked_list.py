@@ -45,13 +45,13 @@ class SinglyLinkedList:
         return ("\n".join(h_list))
 
     def sorted_insert(self, value):
+        new_node = Node(value)
+
         if self.__head == None:
-            new_node = Node(value)
             new_node.next_node = self.__head
             self.__head = new_node
 
         else:
-            new_node = Node(value)
             new_node.data = value
             new_node.node_next = self.__head
             self.__head = new_node
