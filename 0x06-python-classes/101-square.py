@@ -69,13 +69,31 @@ class Square:
 
         self.__position = value
 
+    def __str__(self):
+        """Same print behaviour as my_print"""
+
+        string = ""
+
+        if not self.__size:
+            return sring
+
+        for n in range(self.__position[1]):
+            string += "\n"
+        for i in range(self.__size):
+            for k in range(self.__position[0]):
+                string += " "
+            for j in range(self.__size):
+                string += "#"
+            string += "\n"
+        return string
+
     def area(self):
         '''
          public method to calc area of square
 
           Return: the area of a square
         '''
-        return self.__size ** 2
+        return self.__size * self.__size
 
     def my_print(self):
 
