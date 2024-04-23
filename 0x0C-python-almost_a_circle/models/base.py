@@ -69,7 +69,7 @@ class Base:
         returns a list of instances
         """
         fname = cls.__name__ + ".json"
-        if not os.path.exist(fname):
+        if not os.path.exists(fname):
             return []
         with open(fname, "r") as f:
             return [cls.create(**x) for x in
