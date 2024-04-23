@@ -37,7 +37,7 @@ class Base:
             with open(fname, "w") as fil:
                 fil.write("[]")
         else:
-            with open(fname, "a") as f:
+            with open(fname, "w") as f:
                 f.write(cls.to_json_string(list(map(
                                                 lambda x: x.to_dictionary(),
                                                 list_objs))))
@@ -72,5 +72,5 @@ class Base:
         if not os.path.exist(fname):
             return []
         with open(fname, "r") as f:
-                return [cls.create(**x) for x in
-                        cls.from_json_string(f.read())]
+            return [cls.create(**x) for x in
+                    cls.from_json_string(f.read())]
