@@ -2,6 +2,7 @@
 """ Base class """
 import json
 import os
+import csv
 
 
 class Base:
@@ -74,3 +75,43 @@ class Base:
         with open(fname, "r") as f:
             return [cls.create(**x) for x in
                     cls.from_json_string(f.read())]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ serializes in CSV """
+        fname = cls.__name__ + ".csv"
+        if list_objs is None:
+            with open(fname, "w") as fil:
+                fil.write("[]")
+        else:
+            with open(fname, "w") as f:
+                writer = csv.writer(f)
+                for obj in list_objs:
+                    if cls.__name__ == "Rectangle":
+                        writer.writerow(
+                            [obj.id, obj.width, obj.height, obj.x, obj.y])
+                    if cls.__name__ == "Square":
+                        writer.writerow(
+                            [obj.id, obj.width, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ deserializes from csv file """
+        fname = cls.__name__ + ".csv"
+        if not os.path.exists(fname):
+            return []
+        with open(fname, "r") as f:
+            if cls.__name__ == "Rectangle":
+                reader = csv.DictReader(
+                    f, fieldnames={'id', 'width', 'height', 'x', 'y'})
+            elif cls.__name__ == "Square":
+                reader = csv.DictReader(
+                    f, fieldnames={'id', 'size', 'x', 'y'})
+
+            instances = []
+            for instance in reader:
+                instance = {x: int(y) for x, y in instance.items()}
+                temp = cls.create(**instance)
+                instances.append(temp)
+
+        return instances
