@@ -11,5 +11,5 @@ INNER JOIN tv_show_genres t
 ON s.id = t.show_id
 INNER JOIN tv_genres g
 ON g.id = t.genre_id
-WHERE t.name = 'Comedy'
+WHERE g.name = 'Comedy'
 ORDER BY s.title;
