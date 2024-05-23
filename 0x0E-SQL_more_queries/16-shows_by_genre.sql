@@ -7,7 +7,7 @@
 -- The database name will be passed as an argument of the mysql command
 SELECT s.title, g.name
 FROM tv_shows s
-INNER JOIN tv_show_genres t
+LEFT JOIN tv_show_genres t
 ON s.id = t.show_id
 LEFT JOIN tv_genres g
 ON t.genre_id = g.id
