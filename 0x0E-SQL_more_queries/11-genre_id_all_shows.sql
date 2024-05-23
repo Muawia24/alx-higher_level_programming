@@ -4,7 +4,7 @@
 -- If a show doesn’t have a genre, display NULL
 -- You can use only one SELECT statement
 SELECT s.title, g.genre_id
-FROM tv_show s
+FROM tv_shows s
 	LEFT JOIN tv_show_genres g
 	ON s.id = g.show_id
 	WHERE g.show_id IS NULL
