@@ -5,5 +5,5 @@
 SELECT s.title, g.genre_id
 FROM tv_show_gennres g
 INNER JOIN tv_show s
-ON g.genre_id = s.id
+ON g.show_id = s.id
 ORDER BY s.title, g.genre_id;
