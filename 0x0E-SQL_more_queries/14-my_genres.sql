@@ -8,7 +8,7 @@ SELECT g.name as 'name'
 FROM tv_genres g
 	INNER JOIN tv_show_genres t
 	ON g.id = t.show_id
-	JOIN INNER tv_shows s
+	INNER JOIN tv_shows s
 	ON s.id = t.show_id
 	WHERE s.title = 'Dexter'
 ORDER BY g.name;
