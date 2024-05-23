@@ -4,7 +4,7 @@
 -- Results must be sorted in ascending order by the genre name
 -- You can use only one SELECT statement
 -- The database name will be passed as an argument of the mysql command
-SELECT g.name AS 'name'
+SELECT g.name AS name
 FROM tv_genres g
 	INNER JOIN tv_show_genres t
 	ON g.id = t.show_id
