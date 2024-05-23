@@ -4,6 +4,6 @@
 -- You can use only one SELECT statement
 SELECT s.title, g.genre_id
 FROM tv_show_gennres g
-INNER JOIN tv_show s
+INNER JOIN tv_shows s
 ON g.show_id = s.id
 ORDER BY s.title, g.genre_id;
