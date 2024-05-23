@@ -11,4 +11,4 @@ FROM tv_genres g
 	INNER JOIN tv_shows s
 	ON s.id = t.show_id
 	WHERE s.title = 'Dexter'
-ORDER BY g.name;
+ORDER BY name;
