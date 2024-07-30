@@ -5,9 +5,9 @@ const args = process.argv.slice(2);
 const url = args[0];
 const userDict = {};
 
-request(url, function (error, response, body) {
-  if (error) {
-    console.log(error);
+request(url, function (err, response, body) {
+  if (err) {
+    console.log(err);
   } else {
     const data = JSON.parse(body);
 
