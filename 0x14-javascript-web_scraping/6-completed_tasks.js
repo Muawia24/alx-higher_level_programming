@@ -9,20 +9,20 @@ request(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    body = JSON.parse(body);
+    const data = JSON.parse(body);
 
-    for (let i = 0; i < body.length; i++) {
-      const id = body[i].userId;
+    for (let i = 0; i < data.length; i++) {
+      const id = data[i].userId;
       let count = 0;
-      for (let j = 0; j < body.length; j++) {
-        if (body[j].userId === id) {
-          if (body[j].completed === true) {
+      for (let j = 0; j < data.length; j++) {
+        if (data[j].userId === id) {
+          if (data[j].completed === true) {
             count += 1;
           }
         }
       }
       userDict[String(id)] = count;
     }
-    console.log(userDict);
   }
+  console.log(userDict);
 });
