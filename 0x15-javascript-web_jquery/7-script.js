@@ -1,9 +1,5 @@
-$(function (){
-	$.ajax({
-		type: 'GET',
-		url: 'https://swapi-api.alx-tools.com/api/people/5/?format=json',
-		success: function(name){
-			$('#character').append(name)
-		}
-	});
+$.get('https://swapi-api.alx-tools.com/api/people/5/?format=json',function (data) {
+      $('DIV#character').append(data.name);
+    }
+  });
 });
